@@ -49,6 +49,6 @@ def find_coins_dynamic(change_sum: int) -> dict:
 '''
 
 change_sum = 2578
-f_time = timeit.timeit("print('Решта ', change_sum, ' грошових одиниць у тому вигляді, як вимагає задача: ', find_coins_dynamic(change_sum), 'сек.')", setup=s, number=1, globals=globals())
+f_time = timeit.timeit("print('Решта ', change_sum, ' грошових одиниць у тому вигляді, як вимагає задача: ', find_coins_dynamic(change_sum))", setup=s, number=1, globals=globals())
 
 print(f'Час роботи алгоритму динамічного програмування: {f_time} сек.')
