@@ -1,3 +1,6 @@
+import timeit
+
+s = '''
 def find_coins_dynamic(change_sum: int) -> dict:
     sorted_coin_nominals_list = [1, 2, 5, 10, 25, 50]
 
@@ -25,7 +28,7 @@ def find_coins_dynamic(change_sum: int) -> dict:
     result = k[len(sorted_coin_nominals_list)][change_sum]
 
     # друкуємо рішення у наочному вигляді - список монет, з яких складається сума решти - як на мене, то так зручніше сприймати результат
-    print(f'\nСписок монет для решти в {change_sum} грошових одиниць = {result}')
+    print('Список монет для решти в ', change_sum, ' грошових одиниць = ', result)
 
     # але через те, що за умовами завдання треба повернути словник, то
 
@@ -42,5 +45,10 @@ def find_coins_dynamic(change_sum: int) -> dict:
     return res_dict
 
 
-change_sum = 113
-print(f'Решта {change_sum} грошових одиниць у тому вигляді, як вимагає задача: {find_coins_dynamic(change_sum)}\n')
+
+'''
+
+change_sum = 2578
+f_time = timeit.timeit("print('Решта ', change_sum, ' грошових одиниць у тому вигляді, як вимагає задача: ', find_coins_dynamic(change_sum), 'сек.')", setup=s, number=1, globals=globals())
+
+print(f'Час роботи алгоритму динамічного програмування: {f_time} сек.')
